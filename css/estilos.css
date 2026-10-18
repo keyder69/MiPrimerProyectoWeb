@@ -1,0 +1,123 @@
+:root {
+  --noche: #0e2a3b;
+  --sol: #f5b335;
+  --hoja: #2e8b6a;
+  --pizarra: #43606f;
+  --papel: #f7f9f8;
+  --blanco: #ffffff;
+  --fuente: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--fuente);
+  line-height: 1.65;
+  color: var(--noche);
+  background: var(--papel);
+}
+
+.contenedor {
+  width: min(1080px, 92%);
+  margin-inline: auto;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--sol);
+  outline-offset: 3px;
+}
+
+/* Encabezado */
+.encabezado { background: var(--noche); color: var(--blanco); }
+.encabezado__barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 16px;
+}
+.logo { font-size: 1.5rem; color: var(--sol); letter-spacing: 0.5px; }
+.encabezado nav { display: flex; gap: 22px; }
+.encabezado nav a { color: var(--blanco); text-decoration: none; }
+.encabezado nav a:hover { color: var(--sol); }
+
+/* Portada */
+.portada { padding-block: 64px; }
+.portada__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+.portada h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.2; margin-bottom: 20px; }
+.portada p { color: var(--pizarra); max-width: 56ch; margin-bottom: 28px; }
+.portada__imagen { width: 100%; height: auto; border-radius: 6px; }
+
+/* Botón */
+.boton {
+  display: inline-block;
+  background: var(--sol);
+  color: var(--noche);
+  font: inherit;
+  font-weight: 700;
+  padding: 12px 26px;
+  border: 0;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.boton:hover { background: #e2a122; }
+
+/* Secciones */
+.seccion { padding-block: 64px; }
+.seccion h2 { font-size: 1.9rem; margin-bottom: 12px; }
+.introduccion { color: var(--pizarra); max-width: 60ch; margin-bottom: 32px; }
+
+.pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; list-style: none; }
+.pasos li { border-left: 4px solid var(--hoja); padding-left: 18px; }
+.pasos h3 { margin-bottom: 6px; }
+
+.seccion--oscura { background: var(--noche); color: var(--blanco); }
+.beneficios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 28px; }
+.beneficios h3 { color: var(--sol); margin-bottom: 8px; }
+.beneficios p { color: #d3dee4; }
+.fuente { margin-top: 40px; color: #d3dee4; }
+.fuente a { color: var(--sol); }
+
+/* Calculadora */
+.calculadora { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.calculadora__caja {
+  background: var(--blanco);
+  border: 2px solid var(--noche);
+  border-radius: 6px;
+  padding: 28px;
+  display: grid;
+  gap: 12px;
+}
+.calculadora__caja label { font-weight: 700; }
+.calculadora__caja input {
+  font: inherit;
+  padding: 10px 12px;
+  border: 2px solid var(--pizarra);
+  border-radius: 4px;
+}
+.resultado { color: var(--pizarra); min-height: 3.3em; }
+.resultado strong { color: var(--hoja); }
+
+/* Pie */
+.pie { background: var(--noche); color: #d3dee4; padding-block: 24px; text-align: center; font-size: 0.9rem; }
+
+/* Móvil */
+@media (max-width: 800px) {
+  .portada__grid, .calculadora { grid-template-columns: 1fr; }
+  .pasos, .beneficios { grid-template-columns: 1fr; }
+  .portada { padding-block: 40px; }
+  .seccion { padding-block: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

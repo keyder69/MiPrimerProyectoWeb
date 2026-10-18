@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Información sobre energía solar fotovoltaica para hogares y empresas en Colombia.">
+  <title>Sol Andino | Energía solar para hogares y empresas</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="contenedor encabezado__barra">
+      <h1 class="logo">Sol Andino</h1>
+      <nav aria-label="Principal">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#calculadora">Calculadora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada">
+      <div class="contenedor portada__grid">
+        <div class="portada__texto">
+          <h2>Convierta la luz de su techo en energía para su casa o negocio</h2>
+          <p>
+            La energía solar fotovoltaica transforma la radiación del sol en electricidad.
+            En Colombia, la alta radiación durante todo el año permite reducir la factura
+            de energía y depender menos de la red eléctrica.
+          </p>
+          <a class="boton" href="#calculadora">Estime su ahorro</a>
+        </div>
+        <img class="portada__imagen" src="img/paneles-solares.svg" alt="Ilustración de una casa con paneles solares en el techo bajo un sol brillante">
+      </div>
+    </section>
+
+    <section id="como-funciona" class="seccion">
+      <div class="contenedor">
+        <h2>Cómo funciona un sistema solar</h2>
+        <p class="introduccion">Un sistema conectado a la red tiene tres partes principales que trabajan juntas.</p>
+        <ol class="pasos">
+          <li>
+            <h3>Paneles solares</h3>
+            <p>Capturan la luz del sol y producen corriente continua.</p>
+          </li>
+          <li>
+            <h3>Inversor</h3>
+            <p>Convierte esa corriente en corriente alterna, la que usan los electrodomésticos.</p>
+          </li>
+          <li>
+            <h3>Medidor bidireccional</h3>
+            <p>Registra la energía que consume y la que entrega a la red.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="beneficios" class="seccion seccion--oscura">
+      <div class="contenedor">
+        <h2>Beneficios principales</h2>
+        <div class="beneficios">
+          <article>
+            <h3>Menor factura</h3>
+            <p>Un sistema bien dimensionado puede cubrir gran parte del consumo mensual.</p>
+          </article>
+          <article>
+            <h3>Vida útil larga</h3>
+            <p>Los paneles suelen tener garantías de rendimiento de 25 años o más.</p>
+          </article>
+          <article>
+            <h3>Menos emisiones</h3>
+            <p>Genera electricidad sin quemar combustibles ni producir gases contaminantes.</p>
+          </article>
+        </div>
+        <p class="fuente">
+          Para conocer el panorama mundial de las energías renovables, consulte el sitio de la
+          <a href="https://www.iea.org/energy-system/renewables/solar-pv" target="_blank" rel="noopener">Agencia Internacional de Energía (IEA)</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="calculadora" class="seccion">
+      <div class="contenedor calculadora">
+        <div>
+          <h2>Calcule un estimado</h2>
+          <p class="introduccion">
+            Escriba el valor de su factura mensual de energía en pesos colombianos.
+            El resultado es una aproximación; un diseño real requiere una visita técnica.
+          </p>
+        </div>
+        <div class="calculadora__caja">
+          <label for="factura">Factura mensual (COP)</label>
+          <input id="factura" type="number" min="0" step="10000" placeholder="Ej. 250000" inputmode="numeric">
+          <button id="calcular" class="boton" type="button">Calcular</button>
+          <p id="resultado" class="resultado" aria-live="polite">Ingrese un valor para ver el estimado.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>© <span id="anio"></span> Sol Andino. Proyecto educativo de ejemplo.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
